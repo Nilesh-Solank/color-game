@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Color Game & Generate a Randome Color</title> 
     <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
 </head>
 <body>
     <div class="container">
@@ -16,9 +17,9 @@
         </div>
         </div>
     <div class="MainCircle">  
-        <div class="Circle"></div>  
-        <div class="Circle1"></div>  
-        <div class="Circle2"></div>
+        <div class="circle" id="Circle" ></div>  
+        <div class="circle" id="Circle1" ></div>  
+        <div class="circle" id="Circle2" ></div>
     </div>
     <div class="ColorName">
         <div class="color1">white</div>
@@ -26,7 +27,7 @@
         <div class="color3">white</div>
     </div>
     <div class="button">
-    <button type="button" style="
+    <button type="button" id="Previous" style="
       backgroung: #00000080;
       background: #00000080;
       border: 1px #00000080;
@@ -35,7 +36,7 @@
       border-radius: 100px;
       color: #FFFFFF80;
 ">Previous</button>
-   <button type="button" style="
+   <button type="button" id="Next" style="
       background: #000000;
       border: 1px #00000080;
       height: 50px;
@@ -46,7 +47,7 @@
       margin: 0 0 0 4%;
 ">Next</button>
     </div>
-  
     </div>
+
 </body>
 </html>

@@ -9,6 +9,9 @@
     font-size: 30px;
     margin: 100px 0 0 40px;
 }
+
+.your-color-history {}
+
 .lines{
     color: #B7B7B7;
 }
@@ -19,7 +22,7 @@
 .MainCircle{
     display: flex;
 }
-.Circle{
+#Circle{
     position: relative;
     left: 40%;
     bottom: 65px;
@@ -29,7 +32,7 @@
     border: 1px solid #000000;
     border-radius: 50%;
 }
-.Circle1{
+#Circle1{
     position: relative;
     left: 40%;
     bottom: 65px;
@@ -40,7 +43,7 @@
     border: 1px solid #000000;
     border-radius: 50%;
 }
-.Circle2{
+#Circle2{
     position: relative;
     left: 40%;
     bottom: 65px;
@@ -73,3 +76,9 @@
     margin: 7% 0 0 19%;
     cursor: pointer;
 }
+
+.color-box-1 {}
+
+.color-2 {}
+
+.container {}
