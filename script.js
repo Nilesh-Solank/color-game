@@ -1,18 +1,24 @@
 document.addEventListener("DOMContentLoaded", function () {
     var nextButton = document.getElementById("Next");
     var History = [];
-
+    
     function updateColorValueDisplay(historyObject) {
         var colorValueHistory = document.getElementById("ShowcolorValue");
         colorValueHistory.innerHTML = "";
-
+    
+        var Linebreak = 0;  
         for (var key in historyObject) {
-            var colorValueElement = document.createElement("p");
-            colorValueElement.textContent = key + ": " + historyObject[key];
+            var colorValueElement = document.createElement("div");
+            colorValueElement.className = "circle";
+            colorValueElement.style.backgroundColor = historyObject[key];
             colorValueHistory.appendChild(colorValueElement);
+    
+            Linebreak++;
+            if (Linebreak % 3 === 0) { 
+                colorValueHistory.appendChild(document.createElement("br"));
+            }
         }        
     }
-
     nextButton.addEventListener("click", function () {
         var circles = document.querySelectorAll(".circle");
         var HistoryObject = { bulb_1: ' ', bulb_2: ' ', bulb_3: ' ' };
@@ -26,9 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
         console.log(History);
         updateColorValueDisplay(HistoryObject);
     });
- 
-});     
-
+});
 function getRandomColor() {
     var letters = "0123456789ABCDEF";
     var color = "#";
