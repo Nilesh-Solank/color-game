@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
             var colorValueElement = document.createElement("div");
             colorValueElement.className = "circle";
             colorValueElement.style.backgroundColor = historyObject[key];
+            colorValueElement.style.border = "1px solid black";            
             colorValueHistory.appendChild(colorValueElement);
     
             Linebreak++;
