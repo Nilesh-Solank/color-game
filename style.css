@@ -11,13 +11,13 @@
 }
 
 .lines {
-    margin: 0 0 40px 0;
+    /* margin: 0 0 40px 0; */
     color: #B7B7B7;
 }
 
 .Show-History-Results {
     display: ruby;
-    padding: 45px 0 0 40px;
+    padding: 0 0 0 40px;
     color: black;
 }
 /* .Show-History-Results:hover {
@@ -40,7 +40,6 @@
     bottom: 65px;
     width: 150px;
     height: 150px;
-    background: #FFFFFF;
     border: 1px solid #000000;
     border-radius: 50%;
 }
