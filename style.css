@@ -23,12 +23,8 @@
 .CircleHistory{
     height: 45px;
     width: 50px;
-    /* border: 1px solid black; */
     border-radius: 60%;  
     margin: 0 20px 0 0;
-}
-.Show-History-Results:hover {
-    color: #00000033;
 }
 .circle {
     width: 50px;

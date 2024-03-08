@@ -3,19 +3,24 @@ document.addEventListener("DOMContentLoaded", function () {
     var PreviousButton = document.getElementById("Previous");
     var History = [];
     var currentIndex = -1;
-
+    var selectedColorIndex = -1;  
+    
     function updateColorValueDisplay(historyObjects, circleClassName) {
         var colorValueHistory = document.getElementById("ShowcolorValue");
         colorValueHistory.innerHTML = "";
-
+    
         var Linebreak = 0;
-        historyObjects.forEach(function (historyObject) {
+        historyObjects.forEach(function (historyObject, index) {
             for (var key in historyObject) {
                 var colorValueElement = document.createElement("div");
                 colorValueElement.className = circleClassName;
                 colorValueElement.style.backgroundColor = historyObject[key];
+                colorValueElement.addEventListener("click", function () {
+                    selectedColorIndex = index; 
+                    updateMainCirclesColors(selectedColorIndex);  
+                });
                 colorValueHistory.appendChild(colorValueElement);
-
+    
                 Linebreak++;
                 if (Linebreak % 3 === 0) {
                     colorValueHistory.appendChild(document.createElement("br"));
@@ -23,11 +28,19 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
     }
-
+    
+    function updateMainCirclesColors(selectedColorIndex) {
+        var circles = document.querySelectorAll(".circle");
+        var selectedColors = History[selectedColorIndex];
+        circles.forEach(function (circle, index) {
+            circle.style.backgroundColor = selectedColors['bulb_' + (index + 1)];
+        });
+    }
+    
     nextButton.addEventListener("click", function () {
         var circles = document.querySelectorAll(".circle");
         var HistoryObject = { bulb_1: ' ', bulb_2: ' ', bulb_3: ' ' };
-
+    
         circles.forEach(function (circle, index) {
             var randomColor = getRandomColor();
             var previousColor = circle.style.backgroundColor;
@@ -42,7 +55,7 @@ document.addEventListener("DOMContentLoaded", function () {
         console.log(History);
         updateColorValueDisplay(History, 'CircleHistory');
     });
-
+    
     PreviousButton.addEventListener("click", function () {
         if (currentIndex > 0) {
             currentIndex--;
