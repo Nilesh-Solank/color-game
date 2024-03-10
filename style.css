@@ -1,31 +1,44 @@
- * {
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
-.YourColorHistory, p {
+
+.YourColorHistory,
+.YourColorHistory p {
     color: black;
     font-size: 30px;
     margin: 100px 0 0 40px;
 }
 
 .lines {
-    /* margin: 0 0 40px 0; */
     color: #B7B7B7;
 }
 
 .Show-History-Results {
-    display: ruby;
-    padding: 0 0 0 40px;
-    color: black;
+    /* display: ruby; */
+    padding: 0 0 0 10px;
 }
-.CircleHistory{
-    height: 45px;
-    width: 50px;
-    border-radius: 60%;  
-    margin: 0 20px 0 0;
+
+.Show-History-Results h6 {
+    /* margin: 40px 0 0 0; */
 }
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.CircleHistory {
+    height: 40px;
+    width: 40px;
+    border: 1px solid #000000;
+    border-radius: 60%;
+    margin: 30px 15px 3px 28px;
+}
+
 .circle {
     width: 50px;
     height: 45px;
@@ -37,7 +50,9 @@
     display: flex;
 }
 
-#Circle, #Circle1, #Circle2 {
+#Circle,
+#Circle1,
+#Circle2 {
     position: relative;
     left: 40%;
     bottom: 65px;
@@ -78,11 +93,11 @@
     margin: 7% 0 0 34%;
     cursor: pointer;
 }
- 
+
 .main-circle-wrapper {
     position: fixed;
-    top: 60%; 
-    left: 50%;  
+    top: 60%;
+    left: 50%;
     transform: translate(-50%, -50%);
-    width: 80%;  
+    width: 80%;
 }
