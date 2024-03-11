@@ -1,4 +1,4 @@
-    document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function () {
     var nextButton = document.getElementById("Next");
     var PreviousButton = document.getElementById("Previous");
     var History = [];
@@ -8,7 +8,7 @@
     function updateColorValueDisplay(historyObjects, circleClassName) {
         var colorValueHistory = document.getElementById("ShowcolorValue");
         colorValueHistory.innerHTML = "";
-    
+
         var Linebreak = 0;
         historyObjects.forEach(function (historyObject, index) {
             var wrapperDiv = document.createElement("div");
@@ -16,7 +16,7 @@
             wrapperDiv.style.display = "ruby";
             wrapperDiv.style.padding = "25px 13px 0 0";
             wrapperDiv.style.borderRadius = "50px";
-    
+
             for (var key in historyObject) {
                 var colorValueElement = document.createElement("div");
                 colorValueElement.className = circleClassName;
@@ -29,15 +29,15 @@
                 wrapperDiv.appendChild(colorValueElement);
                 Linebreak++;
             }
-    
+
             colorValueHistory.appendChild(wrapperDiv);
-    
+
             if (Linebreak % 3 === 0) {
                 colorValueHistory.appendChild(document.createElement("br"));
             }
         });
     }
-    
+
     function updateMainCirclesColors(selectedColorIndex) {
         var circles = document.querySelectorAll(".circle");
         var selectedColors = History[selectedColorIndex];
@@ -49,13 +49,13 @@
     function updateWrapperColors() {
         var circles = document.querySelectorAll(".circle");
         var wrapperCircles = document.querySelectorAll(".wrapper");
-        
+
         wrapperCircles.forEach(function (wrapperCircle) {
             var wrapperColors = Array.from(wrapperCircle.querySelectorAll('.CircleHistory')).map(circle => circle.style.backgroundColor);
             if (wrapperColors.every(color => Array.from(circles).map(circle => circle.style.backgroundColor).includes(color))) {
-                wrapperCircle.style.backgroundColor = '#00000033';  
+                wrapperCircle.style.backgroundColor = '#00000033';
             } else {
-                wrapperCircle.style.backgroundColor = ''; 
+                wrapperCircle.style.backgroundColor = '';
             }
         });
     }
@@ -68,7 +68,7 @@
             var randomColor = getRandomColor();
             var previousColor = circle.style.backgroundColor;
             circle.style.backgroundColor = randomColor;
-            HistoryObject['bulb_' + (index + 1)] = randomColor;  
+            HistoryObject['bulb_' + (index + 1)] = randomColor;
         });
         if (currentIndex < History.length - 1) {
             History = History.slice(0, currentIndex + 1);
@@ -77,7 +77,12 @@
         currentIndex++;
         console.log(History);
         updateColorValueDisplay(History, 'CircleHistory');
-        updateWrapperColors(); // 
+        updateWrapperColors();
+
+        if (currentIndex === 1) {
+            PreviousButton.style.backgroundColor = '#000000';
+            PreviousButton.style.color = '#ffffff';
+        }
     });
 
     PreviousButton.addEventListener("click", function () {
@@ -88,7 +93,7 @@
             circles.forEach(function (circle, index) {
                 circle.style.backgroundColor = prevColors['bulb_' + (index + 1)];
             });
-            updateWrapperColors();  
+            updateWrapperColors();
         }
     });
 

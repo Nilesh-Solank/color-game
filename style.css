@@ -24,11 +24,35 @@
 .Show-History-Results h6 {
     /* margin: 40px 0 0 0; */
 }
-
+ 
 .wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: ruby;
+    padding: 25px 13px 0 0;
+    border-radius: 50px;
+}
+
+#ShowcolorValue {
+    display: inline-block;
+    overflow-y: auto; 
+    max-height: 552px; 
+}
+
+#ShowcolorValue::-webkit-scrollbar {
+    width: 10px;  
+}
+
+
+#ShowcolorValue::-webkit-scrollbar-track {
+    background: transparent;  
+}
+ 
+#ShowcolorValue::-webkit-scrollbar-thumb {
+    background: #00000033;  
+    border-radius: 5px;  
+}
+ 
+#ShowcolorValue::-webkit-scrollbar-thumb:vertical {
+    height: 10px; 
 }
 
 .CircleHistory {
@@ -86,11 +110,31 @@
     position: relative;
     left: 4%;
 }
+ 
+.button button {
+    height: 78px;
+    width: 227px;
+    border-radius: 100px;
+    font-size: 20px;
+}
+
+#Previous {
+    background: #00000080;
+    border: 0px solid #00000080;
+    color: #FFFFFF80;
+    margin-right: 5%;
+}
+
+#Next {
+    background: #000000;
+    border: 1px solid black;
+    color: white;
+}
 
 .button {
     display: flex;
     justify-content: center;
-    margin: 7% 0 0 34%;
+    margin: 12% 0 0 34%;
     cursor: pointer;
 }
 
